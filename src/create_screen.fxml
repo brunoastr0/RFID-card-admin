@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1028.0" style="-fx-background-color: #041F4F;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1028.0" style="-fx-background-color: #041F4F;" stylesheets="@stylesheet_school_card.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
    <children>
       <Label layoutX="351.0" layoutY="68.0" prefHeight="74.0" prefWidth="396.0" text="CRIAR CARTAO DE ACESSO" textAlignment="CENTER" textFill="WHITE">
          <font>
@@ -29,7 +29,7 @@
             <Font size="23.0" />
          </font>
       </Button>
-      <ToggleButton fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px; -fx-background-color: white;" styleClass="buttonSelected" text="STUDENT">
+      <ToggleButton fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px; -fx-background-color: #004BF8;" styleClass="buttonSelected" text="STUDENT">
          <font>
             <Font size="23.0" />
          </font>

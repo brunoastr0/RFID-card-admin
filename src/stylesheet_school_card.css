@@ -1,5 +1,12 @@
 
+#progress:hover{
+    -fx-background-color:red;
 
+}
+.buttonSelected{
+    -fx-background-color:red;
+
+}
 #button_create{
     -fx-pref-width:45px;
     -fx-pref-height:50px;
@@ -78,14 +85,6 @@
 .buttonsOnCreate:hover{
     -fx-background-color:rgb(20, 79, 102);
     -fx-text-fill:white;
-}
-#progress:hover{
-    -fx-background-color:red;
-
-}
-.buttonSelected{
-    -fx-background-color:red;
-
 }
 
 
