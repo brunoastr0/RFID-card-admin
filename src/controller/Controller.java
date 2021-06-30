@@ -67,11 +67,24 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    public void viewPerson() throws IOException {
+        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../screen_pos_user.fxml"));
+
+        Parent rootStats = loaderStats.load();
+        rootStats.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
+
+        Stage window = (Stage) sign_up.getScene().getWindow();
+
+        window.setScene(new Scene(rootStats));
+
+    }
+
+    @FXML
     public void stats() throws IOException {
         FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../school_card1.fxml"));
 
         Parent rootStats = loaderStats.load();
-        rootStats.getStylesheets().add("../stylesheet_school_card.css");
+        rootStats.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
 
         Stage window = (Stage) button_create.getScene().getWindow();
 
@@ -83,7 +96,7 @@ public class Controller implements Initializable {
     public void create_window() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../create_screen.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add("stylesheet_school_card.css");
+        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
         Stage window = (Stage) button_create.getScene().getWindow();
         window.setScene(new Scene(root));
 
@@ -92,7 +105,7 @@ public class Controller implements Initializable {
     public void create_student_window() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../school_card_student.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add("stylesheet_school_card.css");
+        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
 
         Stage window = (Stage) progress.getScene().getWindow();
         window.setScene(new Scene(root));
@@ -102,7 +115,7 @@ public class Controller implements Initializable {
     public void employee_screen() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../employee_card.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add("stylesheet_school_card.css");
+        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
         Stage window = (Stage) progress.getScene().getWindow();
         window.setScene(new Scene(root));
     }
@@ -147,8 +160,9 @@ public class Controller implements Initializable {
 
                 card_studentButton.setId("card_studentButton");
                 card_employeeButton.setId("card_employeeButton");
+                progress.setId("progress");
 
-                System.out.println(card_studentButton.getId());
+                card_studentButton.getStyleClass().add("buttonSelected");
                
                 
             }

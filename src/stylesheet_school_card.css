@@ -83,10 +83,10 @@
     -fx-background-color:red;
 
 }
-
-#card_employeeButton{
+.buttonSelected{
     -fx-background-color:red;
 
 }
+
 
 

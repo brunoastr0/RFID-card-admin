@@ -25,7 +25,7 @@ public class App extends Application{
 
   
 
-        root.getStylesheets().add("stylesheet_school_card.css");
+        root.getStylesheets().add(getClass().getResource("stylesheet_school_card.css").toExternalForm());
         stage.setTitle("School card system");
         stage.setResizable(false);
         stage.setScene(scene);
