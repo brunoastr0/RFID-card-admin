@@ -1,4 +1,4 @@
-package controller;
+package app.controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,6 +14,7 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
@@ -33,12 +34,15 @@ public class Controller implements Initializable {
 
     XYChart.Series series = new XYChart.Series();
 
+    
+
     @FXML
     Button button_create, button_stats, button_settings, sign_up, progress;
 
     @FXML
     private ToggleButton card_employeeButton, card_studentButton;
-    
+
+    public SavePersonController savePersonController;
 
     ToggleGroup groupToggle = new ToggleGroup();
 
@@ -53,14 +57,12 @@ public class Controller implements Initializable {
             try {
                 employee_screen();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         } else if (selectedBtn == card_studentButton) {
             try {
                 create_student_window();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -68,7 +70,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void viewPerson() throws IOException {
-        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../screen_pos_user.fxml"));
+        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("src/fxml/screen_pos_user.fxml"));
 
         Parent rootStats = loaderStats.load();
         rootStats.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
@@ -94,7 +96,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void create_window() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../create_screen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/create_screen.fxml"));
         Parent root = loader.load();
         root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
         Stage window = (Stage) button_create.getScene().getWindow();
@@ -103,26 +105,35 @@ public class Controller implements Initializable {
     }
 
     public void create_student_window() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../school_card_student.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/school_card_student.fxml"));
         Parent root = loader.load();
+    
+        savePersonController = loader.getController();
+
         root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
 
         Stage window = (Stage) progress.getScene().getWindow();
         window.setScene(new Scene(root));
 
     }
+
+    /*@FXML
+    public void saveStudent() throws IOException {
+        savePersonController.savePerson(user_name_student_input, email_student_input, phone_student_input, student_code_input, morada_student_input);
+    }*/
 
     public void employee_screen() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../employee_card.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/employee_card.fxml"));
         Parent root = loader.load();
         root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
         Stage window = (Stage) progress.getScene().getWindow();
         window.setScene(new Scene(root));
     }
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         String[] filename = location.toString().split("/");
 
         if (filename[filename.length - 1].toString().equals("school_card1.fxml")) {
@@ -156,13 +167,10 @@ public class Controller implements Initializable {
                 card_employeeButton.setToggleGroup(groupToggle);
                 card_studentButton.setToggleGroup(groupToggle);
 
-                Toggle selectedBtn = groupToggle.getSelectedToggle();
 
-                card_studentButton.setId("card_studentButton");
-                card_employeeButton.setId("card_employeeButton");
-                progress.setId("progress");
+                card_employeeButton.getStyleClass().add("buttonSelected");
 
-                card_studentButton.getStyleClass().add("buttonSelected");
+                
                
                 
             }

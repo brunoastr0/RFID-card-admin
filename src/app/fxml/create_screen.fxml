@@ -24,12 +24,12 @@
       <Button fx:id="button_stats" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#stats" prefHeight="24.0" prefWidth="42.0" stylesheets="@stylesheet_school_card.css" text="stats" />
       <Button fx:id="button_create" layoutX="14.0" layoutY="317.0" mnemonicParsing="false" onAction="#create_window" prefWidth="42.0" style="-fx-background-image:url('./img/create_blue.png');" stylesheets="@stylesheet_school_card.css" text="button_create" />
       <Button fx:id="button_settings" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" text="settings" />
-      <Button fx:id="progress" layoutX="402.0" layoutY="521.0" mnemonicParsing="false" onAction="#choiceBtn" prefHeight="59.0" prefWidth="281.0" style="-fx-background-radius: 50px; -fx-background-color: white;" text="Progredir  &gt;">
+      <Button id="progress" fx:id="progress" layoutX="402.0" layoutY="521.0" mnemonicParsing="false" onAction="#choiceBtn" prefHeight="59.0" prefWidth="281.0" style="-fx-background-radius: 50px;" styleClass="progredir" stylesheets="@stylesheet_school_card.css" text="Progredir  &gt;">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
-      <ToggleButton fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px; -fx-background-color: #004BF8;" styleClass="buttonSelected" text="STUDENT">
+      <ToggleButton id="card_studentButton" fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px;" text="STUDENT">
          <font>
             <Font size="23.0" />
          </font>
@@ -37,7 +37,7 @@
             <ToggleGroup fx:id="group" />
          </toggleGroup>
       </ToggleButton>
-      <ToggleButton fx:id="card_employeeButton" layoutX="546.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px; -fx-background-color: white;" text="EMPLOYEE" toggleGroup="$group">
+      <ToggleButton id="card_employeeButton" fx:id="card_employeeButton" layoutX="546.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px;" text="EMPLOYEE" toggleGroup="$group">
          <font>
             <Font size="23.0" />
          </font>

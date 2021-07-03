@@ -71,21 +71,31 @@
     
 }
 
-
-.text_area{
-
-
-}
-
-
-
-.buttonsOnCreate{
+#card_studentButton{
     -fx-background-color:white;
 }
-.buttonsOnCreate:hover{
-    -fx-background-color:rgb(20, 79, 102);
-    -fx-text-fill:white;
+
+#card_employeeButton{
+    -fx-background-color:white;
+    
 }
 
 
+#card_studentButton:selected{
+    -fx-background-color:#2887F3;
+    -fx-text-fill:white;
+
+}
+
+#card_employeeButton:selected{
+    -fx-background-color:#2887F3;
+    -fx-text-fill:white;
+
+}
+
+
+
+.progredir:hover{
+    -fx-background-color:red;
+}
 
