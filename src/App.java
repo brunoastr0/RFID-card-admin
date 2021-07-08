@@ -1,4 +1,4 @@
-package app;
+
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -8,25 +8,19 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import app.controller.Controller;
 
 public class App extends Application{
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("src/fxml/school_card1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("app/fxml/main.fxml"));
 
         Pane root = loader.load(); 
-
-        
-
-        Controller controller = loader.getController();
+       
 
         Scene scene = new Scene(root);
-
   
 
-        root.getStylesheets().add(getClass().getResource("stylesheet_school_card.css").toExternalForm());
         stage.setTitle("School card system");
         stage.setResizable(false);
         stage.setScene(scene);
@@ -34,12 +28,6 @@ public class App extends Application{
 
         
 
-
-
-
-
-
-    
         
     }
     

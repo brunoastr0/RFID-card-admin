@@ -10,14 +10,14 @@
 #button_create{
     -fx-pref-width:45px;
     -fx-pref-height:50px;
-    -fx-background-image:url("./img/pen.png");
+    -fx-background-image:url("../img/pen.png");
     -fx-background-repeat:no-repeat;
     -fx-background-size:contain;
     -fx-background-color:transparent;
 }
 
 #button_create:hover{
-    -fx-background-image:url("./img/create_blue.png");
+    -fx-background-image:url("../img/create_blue.png");
 
 }
 
@@ -25,34 +25,34 @@
 #button_stats{
     -fx-pref-width:45px;
     -fx-pref-height:50px;
-    -fx-background-image:url("./img/stats.png");
+    -fx-background-image:url("../img/stats.png");
     -fx-background-repeat:no-repeat;
     -fx-background-size:contain;
     -fx-background-color:transparent;
 }
 
 #button_stats:hover{
-    -fx-background-image:url("./img/stats_blue.png");
+    -fx-background-image:url("../img/stats_blue.png");
 }
 
 #button_settings{
     -fx-pref-width:45px;
     -fx-pref-height:50px;
-    -fx-background-image:url("./img/settings.png");
+    -fx-background-image:url("../img/settings.png");
     -fx-background-repeat:no-repeat;
     -fx-background-size:contain;
     -fx-background-color:transparent;
 }
 
 #button_settings:hover{
-    -fx-background-image:url("./img/settings_blue.png");
+    -fx-background-image:url("../img/settings_blue.png");
 
 }
 
 #card_img{
     -fx-pref-width:400px;
     -fx-pref-height:180px;
-    -fx-background-image:url("./img/student_card.png");
+    -fx-background-image:url("../img/student_card.png");
     -fx-background-repeat:no-repeat;
     -fx-background-size:contain;
     -fx-background-color:transparent;
@@ -63,7 +63,7 @@
 #card_imgEmployee{
     -fx-pref-width:400px;
     -fx-pref-height:180px;
-    -fx-background-image:url("./img/funcionario.png");
+    -fx-background-image:url("../img/funcionario.png");
     -fx-background-repeat:no-repeat;
     -fx-background-size:contain;
     -fx-background-color:transparent;

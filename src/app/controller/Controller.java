@@ -14,17 +14,24 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     ArrayList<String> student;
+
+    @FXML
+    private AnchorPane mainAnchor;
 
     @FXML
     private PieChart pie_chart;
@@ -70,10 +77,10 @@ public class Controller implements Initializable {
 
     @FXML
     public void viewPerson() throws IOException {
-        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("src/fxml/screen_pos_user.fxml"));
+        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../fxml/screen_pos_user.fxml"));
 
         Parent rootStats = loaderStats.load();
-        rootStats.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
+        rootStats.getStylesheets().add(getClass().getResource("../public/css/stylesheet_school_card.css").toExternalForm());
 
         Stage window = (Stage) sign_up.getScene().getWindow();
 
@@ -83,10 +90,10 @@ public class Controller implements Initializable {
 
     @FXML
     public void stats() throws IOException {
-        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../school_card1.fxml"));
+        FXMLLoader loaderStats = new FXMLLoader(getClass().getResource("../fxml/main.fxml"));
 
         Parent rootStats = loaderStats.load();
-        rootStats.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
+        rootStats.getStylesheets().add(getClass().getResource("../public/css/stylesheet_school_card.css").toExternalForm());
 
         Stage window = (Stage) button_create.getScene().getWindow();
 
@@ -96,38 +103,68 @@ public class Controller implements Initializable {
 
     @FXML
     public void create_window() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/create_screen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../fxml/create_screen.fxml"));
         Parent root = loader.load();
-        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
+        root.getStylesheets().add(getClass().getResource("../public/css/stylesheet_school_card.css").toExternalForm());
         Stage window = (Stage) button_create.getScene().getWindow();
         window.setScene(new Scene(root));
 
     }
 
     public void create_student_window() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/school_card_student.fxml"));
-        Parent root = loader.load();
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainAnchor.getScene().getWindow());
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxml/school_card_student.fxml"));
+        try{
+            dialog.getDialogPane().setContent(loader.load());
+
+        }catch(IOException e){
+            System.out.println("Could not load the dialog");
+            e.printStackTrace();
+            return;
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        
+        Optional<ButtonType> result = dialog.showAndWait();
+
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            savePersonController = loader.getController();
+            savePersonController.saveStudent();
+        }
     
-        savePersonController = loader.getController();
 
-        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
 
-        Stage window = (Stage) progress.getScene().getWindow();
-        window.setScene(new Scene(root));
 
     }
 
-    /*@FXML
-    public void saveStudent() throws IOException {
-        savePersonController.savePerson(user_name_student_input, email_student_input, phone_student_input, student_code_input, morada_student_input);
-    }*/
+  
 
     public void employee_screen() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("src/fxml/employee_card.fxml"));
-        Parent root = loader.load();
-        root.getStylesheets().add(getClass().getResource("../stylesheet_school_card.css").toExternalForm());
-        Stage window = (Stage) progress.getScene().getWindow();
-        window.setScene(new Scene(root));
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.initOwner(mainAnchor.getScene().getWindow());
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../fxml/employee_card.fxml"));
+        try{
+            dialog.getDialogPane().setContent(loader.load());
+
+        }catch(IOException e){
+            System.out.println("Could not load the dialog");
+            e.printStackTrace();
+            return;
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
+        
+        Optional<ButtonType> result = dialog.showAndWait();
+
+        /*if(result.isPresent() && result.get() == ButtonType.OK){
+            savePersonController = loader.getController();
+            savePersonController.saveStudent();
+        }*/
     }
 
 
