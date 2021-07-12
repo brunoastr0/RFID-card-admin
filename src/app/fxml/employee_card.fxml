@@ -8,15 +8,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="840.0" style="-fx-background-color: #041F4F;" stylesheets="@stylesheet_school_card.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="840.0" styleClass="background" stylesheets="@../public/css/stylesheet_school_card.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.SavePersonController">
    <children>
       <Pane fx:id="sign_up_student" layoutX="130.0" layoutY="63.0" prefHeight="536.0" prefWidth="641.0" style="-fx-background-color: transparent;">
          <children>
             <TextField fx:id="user_name_input" layoutX="14.0" layoutY="61.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
-            <TextField layoutX="328.0" layoutY="61.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
-            <TextField layoutX="11.0" layoutY="180.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
+            <TextField fx:id="user_email_input" layoutX="328.0" layoutY="61.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
+            <TextField fx:id="user_phone_input" layoutX="11.0" layoutY="180.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
             <Label layoutX="11.0" layoutY="148.0" text="PHONE NUMBER" textFill="WHITE">
                <font>
+               
                   <Font size="16.0" />
                </font>
             </Label>
@@ -30,7 +31,7 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="14.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
+            <TextField fx:id="user_code_input" layoutX="14.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
             <Label layoutX="16.0" layoutY="275.0" text="EMPLOYEE CODE" textFill="WHITE">
                <font>
                   <Font size="16.0" />
@@ -41,17 +42,17 @@
                   <Font size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="322.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
+            <TextField fx:id="user_address_input" layoutX="322.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
             <Label layoutX="321.0" layoutY="275.0" text="MORADA" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <ComboBox layoutX="328.0" layoutY="180.0" prefHeight="46.0" prefWidth="238.0" promptText="AREA" />
+            <ComboBox fx:id="cargo" layoutX="328.0" layoutY="180.0" prefHeight="46.0" prefWidth="238.0" promptText="AREA" />
            
 
 
-            <DatePicker layoutX="183.0" layoutY="408.0" prefHeight="46.0" prefWidth="238.0" />
+            <DatePicker fx:id="user_ddn_input" layoutX="183.0" layoutY="408.0" prefHeight="46.0" prefWidth="238.0" />
             <Label layoutX="200.0" layoutY="379.0" text="DATA DE NASCIMENTO" textFill="WHITE">
                <font>
                   <Font size="16.0" />

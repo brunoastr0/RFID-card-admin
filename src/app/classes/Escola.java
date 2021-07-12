@@ -1,5 +1,5 @@
 package app.classes;
 
 public enum Escola {
-    LEIT,LEE,LMM,LCB
+    LEIT,LEE,LMM,LCB,LEC,LEM
 }

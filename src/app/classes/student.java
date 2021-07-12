@@ -1,80 +1,14 @@
 package app.classes;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Arrays;
+import java.util.List;
 
-public class student {
-    private int id;
-  
-    private String name;
-    private String email;
-    private String morada;
+public class student extends Pessoa {
+    private int saldo;
     private Escola curso;
-    private String Code;
-    private LocalDate ddn;
-    private String phone;
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-  
-
-    public student(String name, String email, String phone, String morada, Escola curso, String code, LocalDate ddn) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.morada = morada;
-        this.curso = curso;
-        Code = code;
-        this.ddn = ddn;
-       
-
-    }
-
-    public student(String name, String email, Escola curso, String code) {
-        this.name = name;
-        this.email = email;
-        this.curso = curso;
-        Code = code;
-        
-
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMorada() {
-        return morada;
-    }
-
-    public void setMorada(String morada) {
-        this.morada = morada;
-    }
 
     public Escola getCurso() {
         return curso;
@@ -84,20 +18,35 @@ public class student {
         this.curso = curso;
     }
 
-    public String getCode() {
-        return Code;
+    public int getSaldo() {
+        return saldo;
     }
 
-    public void setCode(String code) {
-        Code = code;
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
     }
 
-    public LocalDate getDdn() {
-        return ddn;
+    public student(String name, String email, String morada, String code, Escola curso, LocalDate ddn, String phone) {
+        super(name, email, morada, code, phone, ddn);
+        this.setSaldo(1500);
+        this.curso = curso;
     }
 
-    public void setDdn(LocalDate ddn) {
-        this.ddn = ddn;
+    public void saveStudent() throws IOException {
+
+        List<List<String>> rows = Arrays.asList(Arrays.asList(String.valueOf(this.getId()), this.getName(),
+                this.getEmail(), this.getPhone(), this.getCode(), String.valueOf(this.getCurso()), String.valueOf(this.getDdn()),
+                this.getMorada(), String.valueOf(this.getSaldo())));
+
+        FileWriter csvWriter = new FileWriter("src/app/controller/resources/csvFile/student.csv", true);
+
+        for (List<String> rowData : rows) {
+            csvWriter.append(String.join(",", rowData));
+            csvWriter.append("\n");
+        }
+
+        csvWriter.flush();
+        csvWriter.close();
     }
 
 }

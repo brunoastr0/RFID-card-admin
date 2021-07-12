@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1028.0" style="-fx-background-color: #041F4F;" stylesheets="@stylesheet_school_card.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Controller">
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="681.0" prefWidth="1028.0" styleClass="buttons" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.Controller">
    <children>
-      <Label layoutX="351.0" layoutY="68.0" prefHeight="74.0" prefWidth="396.0" text="CRIAR CARTAO DE ACESSO" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="138.0" layoutY="14.0" prefHeight="196.0" prefWidth="834.0" stylesheets="@../public/css/stylesheet_school_card.css" text="CRIAR CARTAO DE ACESSO" textAlignment="CENTER">
          <font>
-            <Font name="Pothana2000" size="30.0" />
+            <Font name="DejaVu Serif Condensed Bold" size="57.0" />
          </font>
       </Label>
-      <Label layoutX="451.0" layoutY="151.0" prefHeight="74.0" prefWidth="183.0" style="-fx-opacity: 50%;" text="  TIPO DE CARTAO" textAlignment="CENTER" textFill="WHITE">
+      <Label layoutX="421.0" layoutY="150.0" prefHeight="70.0" prefWidth="244.0" style="-fx-opacity: 50%;" text="  TIPO DE CARTAO" textAlignment="CENTER">
          <font>
-            <Font name="Pothana2000" size="21.0" />
+            <Font name="DejaVu Serif Bold" size="21.0" />
          </font>
       </Label>
-      <Line endX="-1.0" endY="-174.0" layoutX="70.0" layoutY="174.0" startX="-1.0" startY="507.0" stroke="WHITE" />
-      <Button fx:id="button_stats" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#stats" prefHeight="24.0" prefWidth="42.0" stylesheets="@../public/stylesheet_school_card.css" text="stats" />
-      <Button fx:id="button_create" layoutX="14.0" layoutY="317.0" mnemonicParsing="false" onAction="#create_window" prefWidth="42.0"   text="button_create" />
-      <Button fx:id="button_settings" layoutX="14.0" layoutY="538.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="42.0" text="settings" />
       <Button id="progress" fx:id="progress" layoutX="402.0" layoutY="521.0" mnemonicParsing="false" onAction="#choiceBtn" prefHeight="59.0" prefWidth="281.0" style="-fx-background-radius: 50px;" styleClass="progredir" stylesheets="@stylesheet_school_card.css" text="Progredir  &gt;">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
-      <ToggleButton id="card_studentButton" fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px;" text="STUDENT">
+      <ToggleButton id="card_studentButton" fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" text="STUDENT">
          <font>
             <Font size="23.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="group" />
          </toggleGroup>
+         <styleClass>
+            <String fx:value="buttons" />
+            <String fx:value="buttonOnHover" />
+         </styleClass>
       </ToggleButton>
       <ToggleButton id="card_employeeButton" fx:id="card_employeeButton" layoutX="546.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px;" text="EMPLOYEE" toggleGroup="$group">
          <font>
@@ -43,4 +44,8 @@
          </font>
       </ToggleButton>
    </children>
+   <stylesheets>
+      <URL value="@stylesheet_school_card.css" />
+      <URL value="@../public/css/stylesheet_school_card.css" />
+   </stylesheets>
 </AnchorPane>

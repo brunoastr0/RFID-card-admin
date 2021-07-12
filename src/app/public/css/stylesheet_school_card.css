@@ -1,4 +1,11 @@
 
+:root{
+    --color-background: #041F4F;
+}
+
+.background{
+    -fx-background-color:  #ECECEB;
+}
 #progress:hover{
     -fx-background-color:red;
 
@@ -72,30 +79,49 @@
 }
 
 #card_studentButton{
-    -fx-background-color:white;
+    -fx-background-color:black;
+    -fx-text-fill:#b1aaaa;
 }
 
 #card_employeeButton{
-    -fx-background-color:white;
-    
+    -fx-background-color:black;
+    -fx-text-fill:#b1aaaa;
 }
 
 
 #card_studentButton:selected{
-    -fx-background-color:#2887F3;
-    -fx-text-fill:white;
+    -fx-background-color:#C5EE4E;
+    -fx-text-fill:#A6A6A6;
 
 }
 
 #card_employeeButton:selected{
-    -fx-background-color:#2887F3;
+    -fx-background-color:#C5EE4E;
+    -fx-text-fill:#b1aaaa;
+
+}
+
+.buttons{
+    -fx-background-repeat:no-repeat;
+    -fx-background-size:contain;
+    -fx-background-color:transparent;
+}
+.buttonOnHover:hover{
+    -fx-background-color:#C5EE4E;
+}
+.buttonOnHoverPerson:hover{
+    -fx-background-color:#020202;
     -fx-text-fill:white;
 
 }
 
-
-
 .progredir:hover{
-    -fx-background-color:red;
+    
+}
+
+#newCard{
+    -fx-text-decoration:bold;
+    -fx-border:none;
+    -fx-background-color:#A6A6A6;
 }
 
