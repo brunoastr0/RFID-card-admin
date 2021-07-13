@@ -7,7 +7,7 @@
     -fx-background-color:  #ECECEB;
 }
 #progress:hover{
-    -fx-background-color:red;
+    -fx-background-color:#DCEAA8;
 
 }
 .buttonSelected{
@@ -78,6 +78,15 @@
     
 }
 
+
+#searchButton{
+    -fx-background-image:url("../img/search.png");
+    -fx-background-repeat:no-repeat;
+    -fx-background-size:contain;
+    -fx-background-color:transparent;
+
+}
+
 #card_studentButton{
     -fx-background-color:black;
     -fx-text-fill:#b1aaaa;
@@ -115,9 +124,7 @@
 
 }
 
-.progredir:hover{
-    
-}
+
 
 #newCard{
     -fx-text-decoration:bold;

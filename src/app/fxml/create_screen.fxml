@@ -21,12 +21,12 @@
             <Font name="DejaVu Serif Bold" size="21.0" />
          </font>
       </Label>
-      <Button id="progress" fx:id="progress" layoutX="402.0" layoutY="521.0" mnemonicParsing="false" onAction="#choiceBtn" prefHeight="59.0" prefWidth="281.0" style="-fx-background-radius: 50px;" styleClass="progredir" stylesheets="@stylesheet_school_card.css" text="Progredir  &gt;">
+      <Button id="progress" fx:id="progress" layoutX="402.0" layoutY="521.0" mnemonicParsing="false" onAction="#choiceBtn" prefHeight="59.0" prefWidth="281.0" style="-fx-background-radius: 10px;" styleClass="progredir" stylesheets="@stylesheet_school_card.css" text="Progredir  &gt;">
          <font>
             <Font size="23.0" />
          </font>
       </Button>
-      <ToggleButton id="card_studentButton" fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" text="STUDENT">
+      <ToggleButton id="card_studentButton" fx:id="card_studentButton" layoutX="125.0" layoutY="317.0" mnemonicParsing="false" prefHeight="171.0" prefWidth="402.0" style="-fx-background-radius: 15px;" text="STUDENT">
          <font>
             <Font size="23.0" />
          </font>

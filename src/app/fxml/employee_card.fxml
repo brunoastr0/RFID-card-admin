@@ -15,35 +15,35 @@
             <TextField fx:id="user_name_input" layoutX="14.0" layoutY="61.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
             <TextField fx:id="user_email_input" layoutX="328.0" layoutY="61.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
             <TextField fx:id="user_phone_input" layoutX="11.0" layoutY="180.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
-            <Label layoutX="11.0" layoutY="148.0" text="PHONE NUMBER" textFill="WHITE">
+            <Label layoutX="11.0" layoutY="148.0" text="PHONE NUMBER">
                <font>
                
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="36.0" text="EMAIL" textFill="WHITE">
+            <Label layoutX="328.0" layoutY="36.0" text="EMAIL">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="11.0" layoutY="36.0" prefHeight="20.0" prefWidth="110.0" text="USER NAME" textFill="WHITE">
+            <Label layoutX="11.0" layoutY="36.0" prefHeight="20.0" prefWidth="110.0" text="USER NAME">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <TextField fx:id="user_code_input" layoutX="14.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
-            <Label layoutX="16.0" layoutY="275.0" text="EMPLOYEE CODE" textFill="WHITE">
+            <Label layoutX="16.0" layoutY="275.0" text="EMPLOYEE CODE" textFill="#0a0a0a">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="148.0" text="ESCOLA" textFill="WHITE">
+            <Label layoutX="328.0" layoutY="148.0" text="Area">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
             <TextField fx:id="user_address_input" layoutX="322.0" layoutY="305.0" prefHeight="46.0" prefWidth="238.0" styleClass="text_area" />
-            <Label layoutX="321.0" layoutY="275.0" text="MORADA" textFill="WHITE">
+            <Label layoutX="321.0" layoutY="275.0" text="MORADA">
                <font>
                   <Font size="16.0" />
                </font>
@@ -53,14 +53,14 @@
 
 
             <DatePicker fx:id="user_ddn_input" layoutX="183.0" layoutY="408.0" prefHeight="46.0" prefWidth="238.0" />
-            <Label layoutX="200.0" layoutY="379.0" text="DATA DE NASCIMENTO" textFill="WHITE">
+            <Label layoutX="200.0" layoutY="379.0" text="DATA DE NASCIMENTO">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
          </children>
       </Pane>
-      <Label layoutX="307.0" layoutY="43.0" prefHeight="40.0" prefWidth="288.0" text="CREATE EMPLOYEE CARD" textFill="#f5f5f5c5">
+      <Label layoutX="307.0" layoutY="43.0" prefHeight="40.0" prefWidth="288.0" text="CREATE EMPLOYEE CARD" textFill="#000000c4">
          <font>
             <Font size="22.0" />
          </font>
